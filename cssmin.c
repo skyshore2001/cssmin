@@ -105,8 +105,9 @@ machine(int c)
 	
 	switch (state){
 		case STATE_FREE:
-			if (c == ' ' && c == '\n' ) {
+			if (c == ' ' || c == '\n' ) {
 				c = 0;
+				break;
 			} else if (c == '@'){
 				state = STATE_ATRULE;
 				break;
